@@ -18,10 +18,10 @@ const receiveComment = payload => {
   })
 }
 
-const removeComment = CommentId => {
+const removeComment = commentId => {
   return ({
-    type: REMOVE_TASK,
-    CommentId: CommentId
+    type: REMOVE_COMMENT,
+    commentId: commentId
   })
 }
 
