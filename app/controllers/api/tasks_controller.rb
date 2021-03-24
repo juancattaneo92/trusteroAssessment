@@ -40,7 +40,7 @@ class Api::TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to api_tasks_url
+    render :show
   end
 
   private

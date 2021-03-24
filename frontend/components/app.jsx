@@ -3,8 +3,8 @@ import { Route, Switch, Link, Redirect } from 'react-router-dom';
 import Header from './header/header';
 import Modal from './modal/modal';
 import IndexListContainer from './list/index_list_container';
-import IndexTaskContainer from './task/index_task_container';
-import ShowTaskContainer from './task/show_task_container';
+import ShowListContainer from './list/show_list_container';
+// import IndexTaskContainer from './task/index_task_container';
 
 
 const App = () => (

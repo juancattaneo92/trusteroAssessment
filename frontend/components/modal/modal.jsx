@@ -19,25 +19,25 @@ function Modal({ modal, closeModal, clearErrors }) {
     let editModal = modal;
     switch (modal) {
       case editModal:
-        component = <EditListContainer list={modal["list"]} />;
+        component = <EditListContainer listId={modal["list"]} modal-type={modal["modal-type"]} />;
         break;
       default:
         return null;
     }
-  } else if (modal["modal-type"] && modal["task"]) {
+  } else if (modal["modal-type"] && modal["edit-task"]) {
     let editModal = modal;
     switch (modal) {
       case editModal:
-        component = <EditTaskContainer list={modal["task"]} />;
+        component = <EditTaskContainer list={modal["edit-task"]} />;
         break;
       default:
         return null;
     }
-   } else if (modal["modal-type"] && modal["comment"]) {
+   } else if (modal["modal-type"] && modal["edit-comment"]) {
       let editModal = modal;
       switch (modal) {
         case editModal:
-          component = <EditCommentContainer list={modal["comment"]} />;
+          component = <EditCommentContainer list={modal["edit-comment"]} />;
           break;
         default:
           return null;

@@ -24,7 +24,7 @@ export const updateList = (list) => {
     data: { list }
   })
 }
-export const deleteList = listId => {
+export const deleteList = (listId) => {
   return $.ajax({
     url: `/api/lists/${listId}`,
     method: "DELETE"

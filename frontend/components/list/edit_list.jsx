@@ -4,16 +4,16 @@ class EditList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: this.props.list.name,
+      name: this.props.list.name
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let list = Object.assign({}, this.state)
-    this.props.updateList(list)
-      .then(() => this.props.closeModal())
+    // let list = Object.assign({}, this.state)
+    this.props.updateList(this.props.list)
+      .then( () => this.props.closeModal())
   }
 
   handleInput(inputType) {
@@ -21,11 +21,14 @@ class EditList extends React.Component {
   }
 
   componentDidMount() {
+    debugger
+    // let pathArray = this.props.location.pathname.split("/")
+    // let listId = parseInt(pathArray[pathArray.length - 1])
     this.props.fetchList(this.props.list.id)
   }
 
   render() {
-    if (this.props.reviews === undefined) {
+    if (this.props.list === null) {
       return null
     }
     return (
@@ -42,7 +45,7 @@ class EditList extends React.Component {
               onChange={this.handleInput("name")} />
           </div>
           <div className="submit-but-div">
-            <button>Add to List</button>
+            <button>Edit</button>
           </div>
         </form>
       </div>

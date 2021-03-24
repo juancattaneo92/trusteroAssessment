@@ -1,27 +1,42 @@
 import React from 'react';
+import TaskIndexItem from "../task/index_task_item";
 
-class IndexTask extends React.Component {
+class ShowList extends React.Component {
   constructor(props) {
     super(props);
-
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchLists();
+    this.props.fetchTasks();
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    // debugger
+    let pathArray = this.props.location.pathname.split("/")
+    let listId = parseInt(pathArray[pathArray.length - 1])
+    this.props.deleteList(listId).then(
+      this.props.history.push("/")
+    )
+  }
 
   render() {
-
+    let pathArray = this.props.location.pathname.split("/")
+    let listId = parseInt(pathArray[pathArray.length - 1])
     return (
-      <div className="list-container">
-        <div className="list-box">
-          {this.props.lists.map((list) => {
-            return <ListIndexItem list={list} key={list.id} />
+      <div className="task-container">
+        <div>
+          <button className="review-but" onClick={this.handleDelete}>Delete</button>
+          <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>;
+        </div>
+        <div className="task-box">
+          {this.props.tasks.map((task) => {
+            return <TaskIndexItem task={task} key={task.id} />
           })}
         </div>
         <div>
-          <button className="review-but" onClick={() => this.props.openModal("create-list")}>Add New List</button>
+          <button className="review-but" onClick={() => this.props.openModal("create-task")}>Add New Task</button>
         </div>
       </div>
 
@@ -30,4 +45,4 @@ class IndexTask extends React.Component {
 
 }
 
-export default IndexTask;
+export default ShowList;

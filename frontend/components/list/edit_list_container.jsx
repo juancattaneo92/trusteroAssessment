@@ -4,16 +4,18 @@ import EditList from "./edit_list";
 import { closeModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
+  // debugger
   return {
     lists: Object.values(state.entities.lists),
+    list: state.entities.lists[state.ui.modal.list]
   }
 }
 
 const mDTP = dispatch => {
   return ({
     fetchList: (listId) => dispatch(fetchList(listId)),
-    updateList: (list) => dispatch(updateList((list))),
+    updateList: (list) => dispatch(updateList(list)),
     closeModal: () => dispatch(closeModal()),
   })
 }
