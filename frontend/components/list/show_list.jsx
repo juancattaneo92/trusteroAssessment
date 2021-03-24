@@ -4,12 +4,25 @@ import TaskIndexItem from "../task/index_task_item";
 class ShowList extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    }
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchTasks();
+  
+    this.props.fetchTasksByListId(this.props.listId)
+    this.props.fetchList(this.props.match.params.listId)
+      .then(() => this.setState({ loading: false }))
   }
+
+  // componentDidUpdate(prevProps){
+  //   if (this.props.match.params.listId !== prevProps.match.params.listId) {
+  //       this.props.fetchList(this.props.match.params.listId)  
+  //   }
+  // }
+
 
   handleDelete(e) {
     e.preventDefault();
@@ -22,15 +35,18 @@ class ShowList extends React.Component {
   }
 
   render() {
+    if (this.state.loading) {
+      return <div></div>
+    }
     let pathArray = this.props.location.pathname.split("/")
     let listId = parseInt(pathArray[pathArray.length - 1])
     // debugger
     return (
       <div className="task-container">
-        {/* {this.props.list.name} */}
+        {this.props.list.name}
         <div>
           <button className="review-but" onClick={this.handleDelete}>Delete</button>
-          <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>;
+          <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>
         </div>
         <div className="task-box">
           {this.props.tasks.map((task) => {

@@ -14,11 +14,12 @@ class CreateTask extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
+    // debugger
     e.preventDefault();
     let task = Object.assign({}, this.state)
     task.list_id = this.props.listId
-    this.props.createTask(this.props.listId, task).then(this.props.closeModal)
+    this.props.createTask(this.props.listId, task)
+      .then(this.props.closeModal)
   }
 
   handleInput(inputType) {

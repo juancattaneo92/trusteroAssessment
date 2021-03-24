@@ -6,6 +6,7 @@ class EditTask extends React.Component {
     this.state = {
       title: this.props.task.title,
       description: this.props.task.description,
+      id: this.props.task.id
       // status: this.props.task.status
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,7 +15,7 @@ class EditTask extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     // let task = Object.assign({}, this.state)
-    this.props.updateTask(this.props.task)
+    this.props.updateTask(this.state)
       .then(() => this.props.closeModal())
   }
 
@@ -23,11 +24,11 @@ class EditTask extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTask(this.props.taskId)
+    this.props.fetchTask(this.props.task.id)
   }
 
   render() {
-    if (this.props.list === null) {
+    if (this.props.task === null) {
       return null
     }
     return (

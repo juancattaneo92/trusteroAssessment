@@ -1,15 +1,20 @@
 import React from 'react';
-import TaskIndexItem from "../task/index_task_item";
+// import TaskIndexItem from "../task/index_task_item";
 
 class ShowTask extends React.Component {
   constructor(props) {
     super(props);
+    this.state ={
+      loading: true
+    }
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchTasks(this.props.match.params.taskId)
-    this.props.fetchComments(this.props.match.params.taskId)
+    // debugger
+    // this.props.fetchTasks()
+    this.props.fetchTask(this.props.match.params.taskId)
+    // this.props.fetchComments(this.props.match.params.taskId)
       .then( () => this.setState( {loading: false} ))
   }
 
@@ -24,7 +29,7 @@ class ShowTask extends React.Component {
   }
 
   render() {
-    if (this.state.loading || !this.props.comments) {
+    if(this.state.loading){
       return <div></div>
     }
     let pathArray = this.props.location.pathname.split("/")
@@ -33,7 +38,7 @@ class ShowTask extends React.Component {
       <div className="task-container">
         <div>
           <button className="review-but" onClick={this.handleDelete}>Delete</button>
-          <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-task", "task": taskId, })}>Edit</button>;
+          <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-task", "task": taskId, })}>Edit</button>
         </div>
         <div className="task-box">
             <div>{this.props.task.title}</div>
@@ -41,11 +46,11 @@ class ShowTask extends React.Component {
             {/* <div>{this.props.task.status}</div> */}
         </div>
         <div>
-          <button className="review-but" onClick={() => this.props.openModal("create-task")}>Add New Task</button>
+          {/* <button className="review-but" onClick={() => this.props.openModal("create-comment")}>Add Comment</button> */}
         </div>
-        <div>
+        {/* <div>
           <IndexCommentContainer comments={this.props.comments} openModal={this.props.openModal}/>
-        </div>
+        </div> */}
       </div>
 
     )

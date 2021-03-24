@@ -1,13 +1,17 @@
 class Api::TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
-    render :index
+    if(params[:list_id])
+      @tasks = Task.where(list_id: params[:list_id])
+      render :index
+    else
+      @tasks = Task.all
+      render :index
+    end 
   end
 
   def show
     @task = Task.find(params[:id])
-    render :show
   end
 
   def create
@@ -20,19 +24,15 @@ class Api::TasksController < ApplicationController
     end
   end
 
-  def edit
-    @task = Task.find(params[:id])
-    render :edit
-  end
-
   def update
-    @task = Task.find(params[:id])
+    @task = Task.find_by(id: params[:id])
 
     if @task.update(task_params)
-      redirect_to api_task_url(@task)
+      # debugger
+      render :show
     else
       flash.now[:errors] = @task.errors.full_messages
-      render :edit
+      render :show
     end
   end
 

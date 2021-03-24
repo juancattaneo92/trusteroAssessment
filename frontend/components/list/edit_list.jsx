@@ -23,7 +23,7 @@ class EditList extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    // debugger
     // let pathArray = this.props.location.pathname.split("/")
     // let listId = parseInt(pathArray[pathArray.length - 1])
     this.props.fetchList(this.props.list.id)

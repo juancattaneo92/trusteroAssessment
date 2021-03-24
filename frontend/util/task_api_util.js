@@ -4,6 +4,15 @@ export const fetchTasks = () => {
     method: "GET",
   })
 }
+
+export const fetchTasksByListId = (listId) => {
+  return $.ajax({
+    url: `/api/tasks`,
+    method: "GET",
+    data: { list_id: listId }
+  })
+}
+
 export const fetchTask = (taskId) => {
   return $.ajax({
     url: `/api/tasks/${taskId}`,

@@ -4,7 +4,7 @@ import { fetchTask, updateTask } from "../../actions/task_actions";
 import { closeModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";
 
-const mSTP = (state, ownProps) => {
+const mSTP = (state,) => {
   // debugger
   return {
     tasks: Object.values(state.entities.tasks),
@@ -12,9 +12,9 @@ const mSTP = (state, ownProps) => {
   }
 }
 
-const mDTP = dispatch => {
+const mDTP = (dispatch) => {
   return ({
-    fetchTask: (taskId) => dispatch(fetchList(taskId)),
+    fetchTask: (taskId) => dispatch(fetchTask(taskId)),
     updateTask: (task) => dispatch(updateTask(task)),
     closeModal: () => dispatch(closeModal()),
   })

@@ -4,6 +4,7 @@ import Header from './header/header';
 import Modal from './modal/modal';
 import IndexListContainer from './list/index_list_container';
 import ShowListContainer from './list/show_list_container';
+import ShowTaskContainer from './task/show_task_container';
 // import IndexTaskContainer from './task/index_task_container';
 
 
@@ -14,8 +15,8 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={IndexListContainer} />
       <Route exact path="/lists/:listId" component={ShowListContainer} />
-      {/* <Route path="/tasks" component={IndexTaskContainer} />
-      <Route exact path="/tasks/:tasksId" component={ShowTaskContainer} />  */}
+      <Route exact path="/tasks/:taskId" component={ShowTaskContainer} />  
+      {/* <Route path="/tasks" component={IndexTaskContainer} /> */}
       <Redirect to="/" />
     </Switch>
   </div>

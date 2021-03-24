@@ -11,10 +11,10 @@ const receiveTasks = tasks => {
   })
 }
 
-const receiveTask = payload => {
+const receiveTask = task => {
   return ({
     type: RECEIVE_TASK,
-    payload
+    task
   })
 }
 
@@ -29,6 +29,11 @@ const removeTask = taskId => {
 
 export const fetchTasks = () => dispatch => {
   return TaskAPIUtil.fetchTasks()
+    .then(res => dispatch(receiveTasks(res)))
+}
+
+export const fetchTasksByListId = (listId) => dispatch => {
+  return TaskAPIUtil.fetchTasksByListId(listId)
     .then(res => dispatch(receiveTasks(res)))
 }
 
