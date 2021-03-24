@@ -24,20 +24,20 @@ function Modal({ modal, closeModal, clearErrors }) {
       default:
         return null;
     }
-  } else if (modal["modal-type"] && modal["edit-task"]) {
+  } else if (modal["modal-type"] && modal["task"]) {
     let editModal = modal;
     switch (modal) {
       case editModal:
-        component = <EditTaskContainer list={modal["edit-task"]} />;
+        component = <EditTaskContainer task={modal["task"]} modal-type={modal["edit-task"]} />;
         break;
       default:
         return null;
     }
-   } else if (modal["modal-type"] && modal["edit-comment"]) {
+   } else if (modal["modal-type"] && modal["comment"]) {
       let editModal = modal;
       switch (modal) {
         case editModal:
-          component = <EditCommentContainer list={modal["edit-comment"]} />;
+          component = <EditCommentContainer comment={modal["comment"]} modal-type={modal["edit-comment"]} />;
           break;
         default:
           return null;

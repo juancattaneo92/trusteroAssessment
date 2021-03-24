@@ -6,17 +6,19 @@ class CreateTask extends React.Component {
     this.state = {
       title: "",
       description: "",
-      status: false,
+      // status: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleInput = this.handleInput.bind(this);
+
   }
 
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     let task = Object.assign({}, this.state)
-    this.props.createTask(list).then(this.props.closeModal)
+    task.list_id = this.props.listId
+    this.props.createTask(this.props.listId, task).then(this.props.closeModal)
   }
 
   handleInput(inputType) {

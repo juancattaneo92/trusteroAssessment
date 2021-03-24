@@ -1,0 +1,67 @@
+import React from "react";
+
+class EditTask extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: this.props.task.title,
+      description: this.props.task.description,
+      // status: this.props.task.status
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    // let task = Object.assign({}, this.state)
+    this.props.updateTask(this.props.task)
+      .then(() => this.props.closeModal())
+  }
+
+  handleInput(inputType) {
+    return e => this.setState({ [inputType]: e.target.value })
+  }
+
+  componentDidMount() {
+    this.props.fetchTask(this.props.taskId)
+  }
+
+  render() {
+    if (this.props.list === null) {
+      return null
+    }
+    return (
+      <div className="modal-container">
+        <div onClick={this.props.closeModal} className='close-X' id="">×</div>
+
+        <form className="list-form" onSubmit={this.handleSubmit}>
+          <div className="List-title">Edit Task</div>
+          <div className="body-div">
+            <textarea
+              type="text"
+              placeholder="title"
+              value={this.state.title}
+              onChange={this.handleInput("title")} />
+            <textarea
+              type="text"
+              placeholder="description"
+              value={this.state.description}
+              onChange={this.handleInput("description")} />
+            {/* <input
+              type="radio"
+              name="status"
+              value */}
+          </div>
+          <div className="submit-but-div">
+            <button>Edit</button>
+          </div>
+        </form>
+      </div>
+
+    )
+
+  }
+
+}
+
+export default EditTask;

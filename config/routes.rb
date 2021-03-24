@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :lists, only:[:index, :show, :create, :update, :destroy]
     resources :tasks, only:[:index, :show, :create, :update, :destroy]
+    resources :lists, only:[:show, :index, :create] do 
+      resources :tasks, only:[:index, :create]
+    end
     resources :comments, only:[:index, :show, :create, :update, :destroy]
   end 
 

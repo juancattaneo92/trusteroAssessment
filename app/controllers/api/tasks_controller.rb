@@ -12,12 +12,11 @@ class Api::TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
-
+    # debugger
     if @task.save
-      redirect_to api_task_url(@task)
+      render :show
     else
       flash.now[:errors] = @task.errors.full_messages
-      render :new
     end
   end
 
@@ -45,7 +44,7 @@ class Api::TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :description, :status, :list_id)
+    params.require(:task).permit(:id, :title, :description, :status, :list_id)
   end
 
 end

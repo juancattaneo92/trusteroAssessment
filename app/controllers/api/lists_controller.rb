@@ -16,16 +16,17 @@ class Api::ListsController < ApplicationController
       # render :index
     else
       flash.now[:errors] = @list.errors.full_messages
-      render :index
     end
   end
 
   def update
-    @list = List.find_by(id: params[:id])
 
+    @list = List.find_by(id: params[:id])
+    # debugger
     if @list.update(list_params)
       # redirect_to "/api/lists"
-      render :index
+      # debugger
+      render :show
     else
       flash.now[:errors] = @list.errors.full_messages
       render :show

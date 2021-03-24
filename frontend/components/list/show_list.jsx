@@ -24,8 +24,10 @@ class ShowList extends React.Component {
   render() {
     let pathArray = this.props.location.pathname.split("/")
     let listId = parseInt(pathArray[pathArray.length - 1])
+    // debugger
     return (
       <div className="task-container">
+        {/* {this.props.list.name} */}
         <div>
           <button className="review-but" onClick={this.handleDelete}>Delete</button>
           <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>;
@@ -46,3 +48,16 @@ class ShowList extends React.Component {
 }
 
 export default ShowList;
+
+
+// componentDidMount() {
+//   // debugger
+//   this.props.fetchList(this.props.match.params.listId);
+//   this.props.fetchTasks();
+// }
+
+// componentDidUpdate(prevProps){
+//   if (this.props.match.params.listId !== prevProps.match.params.listId) {
+
+//   }
+// }

@@ -4,15 +4,17 @@ class EditList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: this.props.list.name
+      name: this.props.list.name,
+      id: this.props.list.id
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     // let list = Object.assign({}, this.state)
-    this.props.updateList(this.props.list)
+    this.props.updateList(this.state)
       .then( () => this.props.closeModal())
   }
 

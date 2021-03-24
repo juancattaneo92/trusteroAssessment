@@ -12,7 +12,7 @@ export const fetchTask = (taskId) => {
 }
 export const createTask = (listId, task) => {
   return $.ajax({
-    url: `/api/tasks/${listId}/tasks`,
+    url: `/api/lists/${listId}/tasks`,
     method: "POST",
     data: {
       task: task,
