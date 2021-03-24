@@ -4,6 +4,15 @@ export const fetchComments = () => {
     method: "GET",
   })
 }
+
+export const fetchCommentsByTaskId = (taskId) => {
+  return $.ajax({
+    url: `/api/comments`,
+    method: "GET",
+    data: { task_id: taskId }
+  })
+}
+
 export const fetchComment = (commentId) => {
   return $.ajax({
     url: `/api/comments/${commentId}`,

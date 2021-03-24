@@ -11,10 +11,10 @@ const receiveComments = comments => {
   })
 }
 
-const receiveComment = payload => {
+const receiveComment = comment => {
   return ({
     type: RECEIVE_COMMENT,
-    payload
+    comment
   })
 }
 
@@ -29,6 +29,11 @@ const removeComment = commentId => {
 
 export const fetchComments = () => dispatch => {
   return CommentAPIUtil.fetchComments()
+    .then(res => dispatch(receiveComments(res)))
+}
+
+export const fetchCommentsByTaskId = (listId) => dispatch => {
+  return CommentAPIUtil.fetchCommentsByTaskId(listId)
     .then(res => dispatch(receiveComments(res)))
 }
 

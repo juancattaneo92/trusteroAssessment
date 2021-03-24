@@ -1,45 +1,45 @@
 class Api::CommentsController < ApplicationController
   
   def index
-    @comments = Comment.all
-    render :index
+    if(params[:task_id])
+      @comments = Comment.where(task_id: params[:task_id])
+      render :index
+    else
+      @comments = Comment.all
+      render :index
+    end 
   end
 
   def create
     @comment = Comment.create(comment_params)
 
     if @comment.save
-      redirect_to api_comment_url(@comment)
+      render :index
     else
       flash.now[:errors] = @comment.errors.full_messages
-      render :new
+      render :index
     end
   end
 
-  def edit
-    @comment = Comment.find(params[:id])
-    render :edit
-  end
-
   def update
-    @comment = Comment.find(params[:id])
+    @comment = Comment.find_by(id: params[:id])
 
     if @comment.update(comment_params)
-      redirect_to api_comment_url(@comment)
+      render :index
     else
       flash.now[:errors] = @comment.errors.full_messages
-      render :edit
+      render :index
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    render :show
+    render :index
   end
 
   private
   def comment_params
-    params.require(:comment).permit(:body, :task_id)
+    params.require(:comment).permit(id: :body, :task_id)
   end
 end

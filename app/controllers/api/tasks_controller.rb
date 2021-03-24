@@ -21,6 +21,7 @@ class Api::TasksController < ApplicationController
       render :show
     else
       flash.now[:errors] = @task.errors.full_messages
+      render :show
     end
   end
 
