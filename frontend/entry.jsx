@@ -6,7 +6,7 @@ import Root from "./components/Root.jsx";
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
 
-  // let preloadedState = undefined;
+  let preloadedState = undefined;
   // if (window.currentUser) {
   //   preloadedState = {
   //     entities: {

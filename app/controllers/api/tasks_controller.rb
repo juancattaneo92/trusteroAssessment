@@ -10,16 +10,11 @@ class Api::TasksController < ApplicationController
     render :show
   end
 
-  def new
-    @task = Task.new
-    render :new
-  end
-
   def create
-    @task = Task.new(task_params)
+    @task = Task.create(task_params)
 
     if @task.save
-      redirect_to task_url(@task)
+      redirect_to api_task_url(@task)
     else
       flash.now[:errors] = @task.errors.full_messages
       render :new
@@ -35,7 +30,7 @@ class Api::TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     if @task.update(task_params)
-      redirect_to task_url(@task)
+      redirect_to api_task_url(@task)
     else
       flash.now[:errors] = @task.errors.full_messages
       render :edit
@@ -45,7 +40,7 @@ class Api::TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to tasks_url
+    redirect_to api_tasks_url
   end
 
   private

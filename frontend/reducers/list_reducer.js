@@ -7,7 +7,7 @@ const listsReducer = (state = {}, action) => {
     case RECEIVE_LISTS:
       return action.lists
     case RECEIVE_LIST:
-      return Object.assign(newState, action.payload.lists)
+      return Object.assign(newState, action.list)
     case REMOVE_LIST:
       delete newState[action.listId]
       return newState

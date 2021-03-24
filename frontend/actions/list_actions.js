@@ -11,10 +11,10 @@ const receiveLists = lists => {
   })
 }
 
-const receiveList = payload => {
+const receiveList = list => {
   return ({
     type: RECEIVE_LIST,
-    payload
+    list
   })
 }
 
@@ -37,8 +37,8 @@ export const fetchList = (listId) => dispatch => {
     .then( res => dispatch(receiveList(res)))
 }
 
-export const createList = () => dispatch => {
-  return ListAPIUtil.createList()
+export const createList = (list) => dispatch => {
+  return ListAPIUtil.createList(list)
     .then( res => dispatch(receiveList(res)))
 }
 

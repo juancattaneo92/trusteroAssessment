@@ -1,11 +1,12 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/signup_form_container';
-import ReviewFormContainer from '../reviews/create_review_form_container';
-import EditReviewFormContainer from "../reviews/edit_review_container";
-import PopUpThanks from '../popup_thanks';
+import ListFormContainer from '../list/create_list_form_container';
+import TaskFormContainer from '../task/create_task_form_container';
+import CommentFormContainer from '../comment/create_comment_form_container';
+import EditListContainer from '../list/edit_list_container';
+import EditTaskContainer from '../task/edit_task_container';
+import EditCommentContainer from '../comment/edit_comment_container';
 
 function Modal({ modal, closeModal, clearErrors }) {
 
@@ -14,17 +15,41 @@ function Modal({ modal, closeModal, clearErrors }) {
   }
 
   let component;
-  if (modal["modal-type"] && modal["comment"]) {
+  if (modal["modal-type"] && modal["list"]) {
     let editModal = modal;
     switch (modal) {
       case editModal:
-        component = <EditCommentFormContainer review={modal["comment"]} />;
+        component = <EditListContainer list={modal["list"]} />;
         break;
       default:
         return null;
     }
-  } else {
+  } else if (modal["modal-type"] && modal["task"]) {
+    let editModal = modal;
     switch (modal) {
+      case editModal:
+        component = <EditTaskContainer list={modal["task"]} />;
+        break;
+      default:
+        return null;
+    }
+   } else if (modal["modal-type"] && modal["comment"]) {
+      let editModal = modal;
+      switch (modal) {
+        case editModal:
+          component = <EditCommentContainer list={modal["comment"]} />;
+          break;
+        default:
+          return null;
+      }
+  }else {
+    switch (modal) {
+      case "create-list":
+        component = <ListFormContainer />;
+        break;
+      case "create-task":
+        component = <TaskFormContainer />;
+        break;
       case "create-comment":
         component = <CommentFormContainer />;
         break;

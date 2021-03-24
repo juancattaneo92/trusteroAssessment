@@ -1,12 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
 
 const Header = () => {
-
-
   
   return (
     <div className="header-container">
@@ -17,15 +14,4 @@ const Header = () => {
   );
 };
 
-
-const mSTP = (state) => {
-  return {
-  };
-};
-
-const mDTP = dispatch => {
-  return {
-  }
-};
-
-export default connect(mSTP, mDTP)(Header);
+export default Header;

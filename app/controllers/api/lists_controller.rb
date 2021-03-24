@@ -10,19 +10,15 @@ class Api::ListsController < ApplicationController
     render :show
   end
 
-  def new
-    @list = List.new
-    render :new
-  end
-
   def create
-    @list = List.new(list_params)
-
+    # debugger
+    @list = List.create(list_params)
     if @list.save
-      redirect_to list_url(@list)
+      redirect_to "/api/lists"
+      # render :index
     else
       flash.now[:errors] = @list.errors.full_messages
-      render :new
+      render :index
     end
   end
 
@@ -35,7 +31,7 @@ class Api::ListsController < ApplicationController
     @list = List.find(params[:id])
 
     if @list.update(list_params)
-      redirect_to list_url(@list)
+      redirect_to api_list_url(@list)
     else
       flash.now[:errors] = @list.errors.full_messages
       render :edit

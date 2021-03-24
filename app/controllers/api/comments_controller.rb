@@ -5,16 +5,11 @@ class Api::CommentsController < ApplicationController
     render :index
   end
 
-  def new
-    @list = List.new
-    render :new
-  end
-
   def create
-    @comment = Comment.new(comment_params)
+    @comment = Comment.create(comment_params)
 
     if @comment.save
-      redirect_to comment_url(@comment)
+      redirect_to api_comment_url(@comment)
     else
       flash.now[:errors] = @comment.errors.full_messages
       render :new
@@ -30,7 +25,7 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
 
     if @comment.update(comment_params)
-      redirect_to comment_url(@comment)
+      redirect_to api_comment_url(@comment)
     else
       flash.now[:errors] = @comment.errors.full_messages
       render :edit
@@ -40,7 +35,7 @@ class Api::CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    redirect_to comments_url
+    redirect_to api_comments_url
   end
 
   private
