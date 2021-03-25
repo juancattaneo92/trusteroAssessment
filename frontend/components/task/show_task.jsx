@@ -5,39 +5,33 @@ class ShowTask extends React.Component {
   constructor(props) {
     super(props);
     this.state ={
-      loading: true
+      loading: true,
+      status: false
     }
     this.handleDelete = this.handleDelete.bind(this);
+    this.toggleStatus = this.toggleStatus.bind(this);
   }
 
+  
   componentDidMount() {
-    // debugger
-    // this.props.fetchTasks()
     this.props.fetchTask(this.props.match.params.taskId)
     this.props.fetchCommentsByTaskId(this.props.match.params.taskId)
-      .then( () => this.setState( {loading: false} ))
+    .then( () => this.setState( {loading: false} ))
+  }
+  toggleStatus() {
+    // debugger
+    const currentState = this.state.status;
+    this.setState({ status: !currentState});
   }
 
   handleDelete(e) {
     e.preventDefault();
-    // debugger
     let pathArray = this.props.location.pathname.split("/")
     let taskId = parseInt(pathArray[pathArray.length - 1])
     this.props.deleteTask(taskId).then(
       this.props.history.push("/")
     )
   }
-
-  // componentDidUpdate(prevProps) {
-  //   // const prev = Object.values(prevProps.comments);
-  //   // const current = Object.values(this.props.comments);
-  //   // if (prev.length !== current.length){
-  //   //   this.props.fetchCommentsByTaskId(this.props.match.params.taskId)
-        
-  //   // }
-  // }
-
-
 
   render() {
     if(this.state.loading || !this.props.task){
@@ -58,6 +52,13 @@ class ShowTask extends React.Component {
               <div className="inner-text">
                 {this.props.task.description}
               </div>
+            </div>
+            <div className="status-container">Status:
+              <button
+                className={this.state.status ? "Done" : "Progress"}
+                onClick={this.toggleStatus}>
+                  {this.state.status ? "Done" : "Progress"}
+              </button>
             </div>
             {/* <div>{this.props.task.status}</div> */}
             <div>

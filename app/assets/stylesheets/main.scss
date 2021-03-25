@@ -191,3 +191,29 @@
   margin: 0em 1em 0em 1em;
 }
 
+.Progress{
+    background-color: whitesmoke;
+    height: 2em;
+    width: 5em;
+    color: black;
+    font-size: 1em;
+    font-weight: 300;
+    margin: 0.3em;
+    align-items: center;
+    font-family: "Jost";
+}
+
+.Done{
+    background-color: #486946;
+    height: 2em;
+    width: 5em;
+    color: white;
+    font-size: 1em;
+    font-weight: 300;
+    margin: 0.3em;
+    align-items: center;
+    font-family: "Jost";
+}
+.status-container{
+  font-size: 2em;
+}
