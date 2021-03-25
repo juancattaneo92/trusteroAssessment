@@ -1,0 +1,85 @@
+// Place all the styles related to the api/lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+:root{
+    --main-red: #8A0303;
+    --main-black: black;
+
+}
+*{
+    // box-sizing: border-box;
+    font-family: "Jost";
+}
+
+.main-container{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+.sub-container{
+  display: flex;
+  flex-direction: column;
+  width: 40em;
+
+  background-color: #e4a56e;
+
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+.add-button{
+    background-color: #2b2929;
+    height: 2em;
+    width: 10em;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 300;
+    position: flex;
+    margin: 0.5em;
+    align-items: center;
+    font-family: "Jost";
+}
+.list-container{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+.list-link{
+  text-decoration: none;
+}
+
+
+
+@media only screen and (min-width: 768px) { 
+  .add-button{
+    height: 2.5em;
+    width: 12em;
+    font-size: 2.5rem;
+  }
+  .sub-container{
+    width: 50em;
+  }
+  .list-item{
+    height: 10em;
+    width: 10em;
+    font-size: 3rem;
+  }
+}
+
+.list-item{
+  font-family: 'Montserrat';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  height: 6em;
+  width: 6em;
+  margin: .7em;
+  background-color: whitesmoke;
+  color: black;
+
+}

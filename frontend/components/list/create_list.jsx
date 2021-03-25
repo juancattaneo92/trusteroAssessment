@@ -25,12 +25,11 @@ class CreateList extends React.Component {
 
     return (
       <div className="modal-container">
-        <div onClick={this.props.closeModal} className='close-X' id="">×</div>
+        <div onClick={this.props.closeModal} className='close-x' id="">×</div>
 
         <form className="list-form" onSubmit={this.handleSubmit}>
-          <div className="List-title">Create List</div>
-
-          <div className="body-div">
+          <div className="list-title">Create List</div>
+          <div className="list-bodyr">
             <textarea
               type="text"
               placeholder="Name"
@@ -38,8 +37,8 @@ class CreateList extends React.Component {
               onChange={this.handleInput("name")} />
           </div>
 
-          <div className="submit-but-div">
-            <button>Submit</button>
+          <div >
+            <button className="submit-button" >Submit</button>
           </div>
         </form>
 

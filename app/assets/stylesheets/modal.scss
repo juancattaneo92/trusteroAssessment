@@ -1,0 +1,79 @@
+.modal-background{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.541);
+    z-index: 10;
+    font-family: "Monserrat";
+}
+
+.modal-container{
+    background-color: whitesmoke;
+    width: 15em;
+    height: 15em;
+    margin: 1em;
+
+}
+
+.close-x{
+    font-family: "Monserrat";
+    font-size: 2em;
+    color: #e2812b;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin: auto;
+    margin-right: 0;
+    align-items: center;
+}
+
+.close-x:hover,
+.close-x:focus {
+    cursor: pointer;
+    background-color: #c3bdbd;
+
+}
+
+.list-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.list-title{
+  font-family: "Montserrat";
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+// .list-body{
+//     margin: 1em;
+// }
+
+textarea {
+    outline: none;
+    margin-bottom: 0.5em;
+}
+textarea::placeholder {
+    text-align: center; 
+    font-size: 1rem;
+}
+
+.submit-button{
+    background-color: #2b2929;
+    height: 2em;
+    width: 7em;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 300;
+    position: flex;
+    margin: 0.5em;
+    align-items: center;
+    font-family: "Jost";
+}

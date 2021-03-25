@@ -29,7 +29,7 @@ class IndexComment extends React.Component {
     //   return <div></div>
     // }
     return (
-        <div >
+        <div className="main-container" >
           {this.props.comments.map((comment, idx) => {
             return <IndexCommentItem comment={comment} key={idx} openModal={this.props.openModal} deleteComment={this.props.deleteComment} /> 
             // return (<div>

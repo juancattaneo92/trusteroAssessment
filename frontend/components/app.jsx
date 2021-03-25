@@ -10,7 +10,6 @@ import ShowTaskContainer from './task/show_task_container';
 
 const App = () => (
   <div>
-    <Modal/>
     <Header/>
     <Switch>
       <Route exact path="/" component={IndexListContainer} />
@@ -19,6 +18,7 @@ const App = () => (
       {/* <Route path="/comments" component={IndexCommentContainer} /> */}
       <Redirect to="/" />
     </Switch>
+    <Modal/>
   </div>
 );
 

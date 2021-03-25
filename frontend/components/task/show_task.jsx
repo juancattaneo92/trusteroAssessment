@@ -35,7 +35,7 @@ class ShowTask extends React.Component {
     let pathArray = this.props.location.pathname.split("/")
     let taskId = parseInt(pathArray[pathArray.length - 1])
     return (
-      <div className="task-container">
+      <div className="main-container">
         <div>
           <button className="review-but" onClick={this.handleDelete}>Delete</button>
           <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-task", "task": taskId, })}>Edit</button>

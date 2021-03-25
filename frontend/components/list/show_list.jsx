@@ -17,16 +17,8 @@ class ShowList extends React.Component {
       .then(() => this.setState({ loading: false }))
   }
 
-  // componentDidUpdate(prevProps){
-  //   if (this.props.match.params.listId !== prevProps.match.params.listId) {
-  //       this.props.fetchList(this.props.match.params.listId)  
-  //   }
-  // }
-
-
   handleDelete(e) {
     e.preventDefault();
-    // debugger
     let pathArray = this.props.location.pathname.split("/")
     let listId = parseInt(pathArray[pathArray.length - 1])
     this.props.deleteList(listId).then(
@@ -40,10 +32,9 @@ class ShowList extends React.Component {
     }
     let pathArray = this.props.location.pathname.split("/")
     let listId = parseInt(pathArray[pathArray.length - 1])
-    // debugger
     return (
-      <div className="task-container">
-        <div>
+      <div className="">
+        <div className="">
           {this.props.list.name}
           <button className="review-but" onClick={this.handleDelete}>Delete</button>
           <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>

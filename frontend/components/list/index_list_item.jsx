@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const ListIndexItem = ({ list }) => {
 
   return (
-    <div>
-      <Link to={`/lists/${list.id}`} className="">
-          <div className="name-holder">{list.name}</div>
+    <div className="list-container">
+      <Link to={`/lists/${list.id}`} className="list-link">
+          <div className="list-item">{list.name}</div>
       </Link>
     </div>
 
