@@ -31,6 +31,7 @@ class ShowTask extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.match.params.taskId !== prevProps.match.params.taskId) {
       this.props.fetchCommentsByTaskId(this.props.match.params.taskId)
+        .then(() => this.setState({ loading: false }))
     }
   }
 
