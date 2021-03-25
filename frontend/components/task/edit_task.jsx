@@ -32,17 +32,19 @@ class EditTask extends React.Component {
       return null
     }
     return (
-      <div className="modal-container-create">
+      <div className="modal-container">
         <div onClick={this.props.closeModal} className='close-x' id="">×</div>
 
         <form className="list-form" onSubmit={this.handleSubmit}>
           <div className="list-title">Edit Task</div>
           <div className="list-body">
-            <textarea
-              type="text"
-              placeholder="title"
-              value={this.state.title}
-              onChange={this.handleInput("title")} />
+            <div className="list-title2">
+              <textarea
+                type="text"
+                placeholder="title"
+                value={this.state.title}
+                onChange={this.handleInput("title")} />
+            </div>
             <textarea
               type="text"
               placeholder="description"

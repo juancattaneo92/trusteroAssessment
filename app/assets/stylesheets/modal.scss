@@ -7,23 +7,22 @@
     bottom: 0;
     right: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.541);
+    background: rgba(0, 0, 0, 0.830);
     z-index: 10;
     font-family: "Monserrat";
 }
 
 .modal-container{
     background-color: whitesmoke;
-    width: 15em;
-    height: 13em;
-    margin: 1em;
+    width: 25em;
+    height: 20em;
+    font-size: 2em;
 }
 .modal-container-create{
     background-color: whitesmoke;
     width: 15em;
     height: 18em;
-    margin: 1em;
-
+    font-size: 2em;
 }
 
 .close-x{
@@ -55,7 +54,7 @@
 
 .list-title{
   font-family: "Montserrat";
-  font-size: 2rem;
+  font-size: 2em;
   margin-bottom: 0.5em;
 }
 .list-title-edit{
@@ -70,24 +69,35 @@
    align-items: center;
 }
 
-textarea {
+.list-body > textarea {
+    width: 12em;
+    height: 4em;
     outline: none;
     margin-bottom: 0.5em;
+    font-size: 1.5em;
 }
 textarea::placeholder {
     text-align: center; 
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .submit-button{
     background-color: #2b2929;
-    height: 2em;
-    width: 7em;
+    height: 2.8em;
+    width: 11em;
     color: white;
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     font-weight: 300;
-    position: flex;
     margin: 0.5em;
     align-items: center;
     font-family: "Jost";
+}
+
+
+.list-title2 > textarea {
+    width: 12em;
+    height: 1.8em;
+    outline: none;
+    margin-bottom: 0.3em;
+    font-size: 1.5em;
 }

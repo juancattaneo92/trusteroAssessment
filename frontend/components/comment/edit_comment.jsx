@@ -34,7 +34,7 @@ class EditComment extends React.Component {
       <div className="modal-container">
         <div onClick={this.props.closeModal} className='close-x' id="">×</div>
         <form className="list-form" onSubmit={this.handleSubmit}>
-          <div className="list-title-edit">Edit Comment</div>
+          <div className="list-title">Edit Comment</div>
           <div className="list-body">
             <textarea
               type="text"

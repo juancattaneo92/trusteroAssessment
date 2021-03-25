@@ -36,7 +36,6 @@
     color: white;
     font-size: 1.2rem;
     font-weight: 300;
-    position: flex;
     margin: 0.5em;
     align-items: center;
     font-family: "Jost";
@@ -73,8 +72,8 @@
 
 @media only screen and (min-width: 768px) { 
   .add-button{
-    height: 2.5em;
-    width: 12em;
+    height: 2.3em;
+    width: 10em;
     font-size: 2.5rem;
   }
   .sub-container{
@@ -122,7 +121,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 
 .task-item{
@@ -138,3 +137,57 @@
   margin-bottom: 1px;
   border: 1px solid whitesmoke;
 }
+
+.inner-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.inner-container2{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: end;
+  margin: 0em 3.5em 3.5em 3.5em;
+}
+.description-container{
+  width: 20em;
+  height: 10em;
+  margin: 1em;
+  color: black;
+  background-color: whitesmoke;
+  font-size: 2rem;
+}
+.inner-text{
+  display: flex;
+  justify-content: baseline;
+  margin: 1em;
+  font-family: "Montserrat";
+}
+
+.comment-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.comment-container2{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.comment-item{
+  width: 23em;
+  height: 7em;
+  margin-bottom: 0.8em;
+  color: black;
+  background-color: whitesmoke;
+  font-size: 1.5rem;  
+}
+.button-container2{
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  margin: 0em 1em 0em 1em;
+}
+

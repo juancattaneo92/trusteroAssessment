@@ -15,7 +15,6 @@ const App = () => (
       <Route exact path="/" component={IndexListContainer} />
       <Route exact path="/lists/:listId" component={ShowListContainer} />
       <Route exact path="/tasks/:taskId" component={ShowTaskContainer} />  
-      {/* <Route path="/comments" component={IndexCommentContainer} /> */}
       <Redirect to="/" />
     </Switch>
     <Modal/>

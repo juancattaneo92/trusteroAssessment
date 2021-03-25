@@ -13,7 +13,6 @@ class EditList extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // let list = Object.assign({}, this.state)
     this.props.updateList(this.state)
       .then( () => this.props.closeModal())
   }
@@ -23,9 +22,6 @@ class EditList extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
-    // let pathArray = this.props.location.pathname.split("/")
-    // let listId = parseInt(pathArray[pathArray.length - 1])
     this.props.fetchList(this.props.list.id)
   }
 
