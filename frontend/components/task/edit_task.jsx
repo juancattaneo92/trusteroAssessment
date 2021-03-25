@@ -32,12 +32,12 @@ class EditTask extends React.Component {
       return null
     }
     return (
-      <div className="modal-container">
-        <div onClick={this.props.closeModal} className='close-X' id="">×</div>
+      <div className="modal-container-create">
+        <div onClick={this.props.closeModal} className='close-x' id="">×</div>
 
         <form className="list-form" onSubmit={this.handleSubmit}>
-          <div className="List-title">Edit Task</div>
-          <div className="body-div">
+          <div className="list-title">Edit Task</div>
+          <div className="list-body">
             <textarea
               type="text"
               placeholder="title"
@@ -53,8 +53,8 @@ class EditTask extends React.Component {
               name="status"
               value */}
           </div>
-          <div className="submit-but-div">
-            <button>Edit</button>
+          <div >
+            <button className="submit-button">Edit</button>
           </div>
         </form>
       </div>

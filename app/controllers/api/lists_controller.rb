@@ -5,6 +5,7 @@ class Api::ListsController < ApplicationController
   end
 
   def show
+    # debugger
     @list = List.find(params[:id])
   end
 

@@ -29,27 +29,29 @@ class ShowTask extends React.Component {
   }
 
   render() {
-    if(this.state.loading){
+    if(this.state.loading || !this.props.task){
       return <div></div>
     }
     let pathArray = this.props.location.pathname.split("/")
     let taskId = parseInt(pathArray[pathArray.length - 1])
     return (
       <div className="main-container">
-        <div>
-          <button className="review-but" onClick={this.handleDelete}>Delete</button>
-          <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-task", "task": taskId, })}>Edit</button>
-        </div>
-        <div className="task-box">
-            <div>{this.props.task.title}</div>
-            <div>{this.props.task.description}</div>
-            {/* <div>{this.props.task.status}</div> */}
-        </div>
-        <div>
-          <button className="review-but" onClick={() => this.props.openModal("create-comment")}>Add Comment</button>
-        </div>
-        <div>
-          <IndexCommentContainer comments={this.props.comments} openModal={this.props.openModal}/>
+        <div className="sub-container">
+          <div className="title-container">
+            <div className="show-title">{this.props.task.title}</div>
+            <button className="edit-delete-button" onClick={this.handleDelete}>Delete</button>
+            <button className="edit-delete-button" onClick={() => this.props.openModal({ "modal-type": "edit-task", "task": taskId, })}>Edit</button>
+          </div>
+          <div>{this.props.task.description}</div>
+          {/* <div>{this.props.task.status}</div> */}
+          <div className="comments-container">
+            <div>
+              <button className="review-but" onClick={() => this.props.openModal("create-comment")}>Add Comment</button>
+            </div>
+            <div>
+              <IndexCommentContainer comments={this.props.comments} openModal={this.props.openModal} />
+            </div>
+          </div>
         </div>
       </div>
 

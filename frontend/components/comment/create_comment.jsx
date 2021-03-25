@@ -28,12 +28,12 @@ class CreateComment extends React.Component {
 
     return (
       <div className="modal-container">
-        <div onClick={this.props.closeModal} className='close-X' id="">×</div>
+        <div onClick={this.props.closeModal} className='close-x' id="">×</div>
 
         <form className="list-form" onSubmit={this.handleSubmit}>
-          <div className="List-title">Create Comment</div>
+          <div className="list-title-edit">Create Comment</div>
 
-          <div className="body-div">
+          <div className="list-body">
             <textarea
               type="text"
               placeholder="body"
@@ -41,8 +41,8 @@ class CreateComment extends React.Component {
               onChange={this.handleInput("body")} />
           </div>
 
-          <div className="submit-but-div">
-            <button>Submit</button>
+          <div>
+            <button className="submit-button">Submit</button>
           </div>
         </form>
 

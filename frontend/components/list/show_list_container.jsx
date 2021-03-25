@@ -9,10 +9,10 @@ import { withRouter } from 'react-router-dom';
 const mSTP = (state, ownProps) => {
   return {
     tasks: Object.values(state.entities.tasks),
-    list: state.entities.lists[ownProps.match.params.listId],
+    currentList: state.entities.lists[ownProps.match.params.listId],
     listId: ownProps.match.params.listId
 
-  };
+  }; 
 };
 
 const mDTP = (dispatch) => {

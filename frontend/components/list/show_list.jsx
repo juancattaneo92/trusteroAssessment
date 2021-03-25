@@ -11,9 +11,10 @@ class ShowList extends React.Component {
   }
 
   componentDidMount() {
-  
-    this.props.fetchTasksByListId(this.props.listId)
+    // debugger
+    // this.props.fetchList(this.props.currentList.id)
     this.props.fetchList(this.props.match.params.listId)
+    this.props.fetchTasksByListId(this.props.match.params.listId)
       .then(() => this.setState({ loading: false }))
   }
 
@@ -27,7 +28,7 @@ class ShowList extends React.Component {
   }
 
   render() {
-    if (this.state.loading || !this.props.list )  {
+    if (this.state.loading || !this.props.currentList )  {
       return <div></div>
     }
     let pathArray = this.props.location.pathname.split("/")
@@ -36,7 +37,7 @@ class ShowList extends React.Component {
       <div className="main-container">
         <div className="sub-container">
           <div className="title-container">
-            <div className="show-title">{this.props.list.name}</div>
+            <div className="show-title">{this.props.currentList.name}</div>
             <button className="edit-delete-button" onClick={this.handleDelete}>Delete</button>
             <button className="edit-delete-button" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>
           </div>

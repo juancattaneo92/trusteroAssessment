@@ -15,7 +15,13 @@
 .modal-container{
     background-color: whitesmoke;
     width: 15em;
-    height: 15em;
+    height: 13em;
+    margin: 1em;
+}
+.modal-container-create{
+    background-color: whitesmoke;
+    width: 15em;
+    height: 18em;
     margin: 1em;
 
 }
@@ -52,9 +58,17 @@
   font-size: 2rem;
   margin-bottom: 0.5em;
 }
-// .list-body{
-//     margin: 1em;
-// }
+.list-title-edit{
+  font-family: "Montserrat";
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+}
+.list-body{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
 
 textarea {
     outline: none;

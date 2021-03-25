@@ -29,13 +29,13 @@ class CreateTask extends React.Component {
   render() {
 
     return (
-      <div className="modal-container">
-        <div onClick={this.props.closeModal} className='close-X' id="">×</div>
+      <div className="modal-container-create">
+        <div onClick={this.props.closeModal} className='close-x' id="">×</div>
 
         <form className="list-form" onSubmit={this.handleSubmit}>
-          <div className="List-title">Create Task</div>
+          <div className="list-title">Create Task</div>
 
-          <div className="body-div">
+          <div className="list-body">
             <textarea
               type="text"
               placeholder="title"
@@ -52,8 +52,8 @@ class CreateTask extends React.Component {
               value */}
           </div>
 
-          <div className="submit-but-div">
-            <button>Submit</button>
+          <div >
+            <button className="submit-button">Submit</button>
           </div>
         </form>
 
