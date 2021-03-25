@@ -52,6 +52,9 @@
 -Wireframes help me have a better of how things should be done
 <h1 align="center">
   <br>
-<img src="">
-<img src="">
+<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.08.54%20PM.png">
+<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.09.00%20PM.png">
+  <br>
+<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.09.08%20PM.png">
+<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.09.14%20PM.png">
 </h1>
