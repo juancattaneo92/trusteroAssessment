@@ -42,19 +42,19 @@
 
 ## Future Key Features
 
-- Finish the tasks' done and in progress button, I ran out of time to finish it .
-- Allow users to create each list and task with its own color, addind color pallete API.
-- Allow users to search for specific list or task, creating a seach bar and developed it in the backend
+   - Finish the tasks' done and in progress button, I ran out of time to finish it .
+   - Allow users to create each list and task with its own color, addind color pallete API.
+   - Allow users to search for specific list or task, creating a seach bar and developed it in the backend
 
 ## In the Making
 
--I am a visual person, so after I created my schema and sample state I developed some wireframes
--Wireframes help me have a better of how things should be done
+   - I am a visual person, so after I created my schema and sample state I developed some wireframes
+   - Wireframes help me have a better of how things should be done
 <h1 align="center">
   <br>
-<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.08.54%20PM.png">
-<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.09.00%20PM.png">
-  <br>
-<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.09.08%20PM.png">
-<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.09.14%20PM.png">
+<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.08.54%20PM.png" height="500" width="350">
+<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.09.00%20PM.png" height="500" width="350">
+    <br>
+<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.09.08%20PM.png" height="500" width="350">
+<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%202.09.14%20PM.png" height="500" width="350">
 </h1>
