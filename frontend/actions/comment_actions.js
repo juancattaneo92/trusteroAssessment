@@ -44,7 +44,11 @@ export const fetchComment = (commentId) => dispatch => {
 
 export const createComment = (taskId, comment) => dispatch => {
   return CommentAPIUtil.createComment(taskId, comment)
-    .then(res => dispatch(receiveComment(res)))
+    .then(res => {
+      // debugger
+      return dispatch(receiveComment(res))
+      } 
+      )
 }
 
 export const updateComment = (comment) => dispatch => {

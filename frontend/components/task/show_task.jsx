@@ -28,12 +28,16 @@ class ShowTask extends React.Component {
     )
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.match.params.taskId !== prevProps.match.params.taskId) {
-      this.props.fetchCommentsByTaskId(this.props.match.params.taskId)
-        .then(() => this.setState({ loading: false }))
-    }
-  }
+  // componentDidUpdate(prevProps) {
+  //   // const prev = Object.values(prevProps.comments);
+  //   // const current = Object.values(this.props.comments);
+  //   // if (prev.length !== current.length){
+  //   //   this.props.fetchCommentsByTaskId(this.props.match.params.taskId)
+        
+  //   // }
+  // }
+
+
 
   render() {
     if(this.state.loading || !this.props.task){

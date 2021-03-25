@@ -11,6 +11,12 @@ class IndexList extends React.Component {
     this.props.fetchLists();
   }
 
+  componentDidUpdate(prevState){
+    if(this.props.lists.length !== prevState.lists.length){
+      this.props.fetchLists();
+    }
+  }
+
 
   render() {
 
