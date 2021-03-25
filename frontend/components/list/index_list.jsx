@@ -18,8 +18,8 @@ class IndexList extends React.Component {
     return (
       <div className="list-container">
         <div className="list-box">
-          {this.props.lists.map((list) => {
-            return <ListIndexItem list={list} key={list.id} /> })}
+          {this.props.lists.map((list, idx) => {
+            return <ListIndexItem list={list} key={idx} /> })}
         </div>
         <div>
           <button className="review-but" onClick={() => this.props.openModal("create-list")}>Add New List</button>

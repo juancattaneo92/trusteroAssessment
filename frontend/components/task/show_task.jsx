@@ -1,5 +1,5 @@
 import React from 'react';
-// import TaskIndexItem from "../task/index_task_item";
+import IndexCommentContainer from "../comment/index_comment_container";
 
 class ShowTask extends React.Component {
   constructor(props) {
@@ -46,11 +46,11 @@ class ShowTask extends React.Component {
             {/* <div>{this.props.task.status}</div> */}
         </div>
         <div>
-          {/* <button className="review-but" onClick={() => this.props.openModal("create-comment")}>Add Comment</button> */}
+          <button className="review-but" onClick={() => this.props.openModal("create-comment")}>Add Comment</button>
         </div>
-        {/* <div>
+        <div>
           <IndexCommentContainer comments={this.props.comments} openModal={this.props.openModal}/>
-        </div> */}
+        </div>
       </div>
 
     )

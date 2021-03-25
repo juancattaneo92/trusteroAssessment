@@ -35,7 +35,7 @@ class ShowList extends React.Component {
   }
 
   render() {
-    if (this.state.loading) {
+    if (this.state.loading || this.props.list.name === null) {
       return <div></div>
     }
     let pathArray = this.props.location.pathname.split("/")
@@ -43,14 +43,14 @@ class ShowList extends React.Component {
     // debugger
     return (
       <div className="task-container">
-        {this.props.list.name}
         <div>
+          {this.props.list.name}
           <button className="review-but" onClick={this.handleDelete}>Delete</button>
           <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>
         </div>
         <div className="task-box">
-          {this.props.tasks.map((task) => {
-            return <TaskIndexItem task={task} key={task.id} />
+          {this.props.tasks.map((task, idx) => {
+            return <TaskIndexItem task={task} key={idx} />
           })}
         </div>
         <div>

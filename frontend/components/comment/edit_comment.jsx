@@ -4,13 +4,15 @@ class EditComment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: this.props.comment.body
+      body: this.props.comment.body,
+      id: this.props.comment.id
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    // debugger
     this.props.updateComment(this.state)
       .then(() => this.props.closeModal())
   }
@@ -20,6 +22,7 @@ class EditComment extends React.Component {
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchComment(this.props.comment.id)
   }
 

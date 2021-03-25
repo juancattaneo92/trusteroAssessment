@@ -37,8 +37,8 @@ export const fetchCommentsByTaskId = (listId) => dispatch => {
     .then(res => dispatch(receiveComments(res)))
 }
 
-export const fetchComment = (CommentId) => dispatch => {
-  return CommentAPIUtil.fetchComment(CommentId)
+export const fetchComment = (commentId) => dispatch => {
+  return CommentAPIUtil.fetchComment(commentId)
     .then(res => dispatch(receiveComment(res)))
 }
 

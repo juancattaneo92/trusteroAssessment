@@ -10,36 +10,39 @@ class Api::CommentsController < ApplicationController
     end 
   end
 
+  def show
+    @comment = Comment.find(params[:id])
+  end
+
   def create
     @comment = Comment.create(comment_params)
-
+    # debugger
     if @comment.save
-      render :index
+      render :show
     else
       flash.now[:errors] = @comment.errors.full_messages
-      render :index
     end
   end
 
   def update
-    @comment = Comment.find_by(id: params[:id])
-
+    @comment = Comment.find(params[:id])
+    # debugger
     if @comment.update(comment_params)
-      render :index
+      render :show
     else
       flash.now[:errors] = @comment.errors.full_messages
-      render :index
+      render :show
     end
   end
 
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    render :index
+    render :show
   end
 
   private
   def comment_params
-    params.require(:comment).permit(id: :body, :task_id)
+    params.require(:comment).permit(:id, :body, :task_id)
   end
 end

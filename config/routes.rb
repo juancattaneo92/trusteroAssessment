@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resources :lists, only:[:show, :index, :create] do 
       resources :tasks, only:[:index, :create]
     end
+    resources :tasks, only: [:show, :index, :create] do
+      resources :comments, only:[:index, :create]
+    end
     resources :comments, only:[:index, :show, :create, :update, :destroy]
   end 
 

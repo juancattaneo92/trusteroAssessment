@@ -4,11 +4,13 @@ import { fetchComment, updateComment } from "../../actions/comment_actions";
 import { closeModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";
 
-const mSTP = (state,) => {
+const mSTP = (state, ownProps) => {
   // debugger
+  let commentId = ownProps.comment;
   return {
     comments: Object.values(state.entities.comments),
-    comment: state.entities.comments[state.ui.modal.comment]
+    comment: state.entities.comments[state.ui.modal.comment],
+    commentId: commentId
   }
 }
 

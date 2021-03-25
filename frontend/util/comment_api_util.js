@@ -21,7 +21,7 @@ export const fetchComment = (commentId) => {
 }
 export const createComment = (taskId, comment) => {
   return $.ajax({
-    url: `/api/comments/${taskId}/comments`,
+    url: `/api/tasks/${taskId}/comments`,
     method: "POST",
     data: {
       comment: comment,
