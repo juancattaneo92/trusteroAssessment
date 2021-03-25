@@ -8,6 +8,7 @@
 <a href="#key-features">Built with</a> •
 <a href="#key-features">Key Features</a> •
 <a href="#future-key-features">Future Key Features</a> •
+<a href="#In-the-making">In the Making</a> •
 </h4>
 
 <br>
@@ -44,3 +45,13 @@
 - Finish the tasks' done and in progress button, I ran out of time to finish it .
 - Allow users to create each list and task with its own color, addind color pallete API.
 - Allow users to search for specific list or task, creating a seach bar and developed it in the backend
+
+## In the Making
+
+-I am a visual person, so after I created my schema and sample state I developed some wireframes
+-Wireframes help me have a better of how things should be done
+<h1 align="center">
+  <br>
+<img src="">
+<img src="">
+</h1>
