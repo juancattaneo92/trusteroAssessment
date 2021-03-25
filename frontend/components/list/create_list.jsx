@@ -29,7 +29,7 @@ class CreateList extends React.Component {
 
         <form className="list-form" onSubmit={this.handleSubmit}>
           <div className="list-title">Create List</div>
-          <div className="list-bodyr">
+          <div className="list-body">
             <textarea
               type="text"
               placeholder="Name"

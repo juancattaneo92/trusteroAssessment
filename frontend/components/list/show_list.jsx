@@ -27,28 +27,29 @@ class ShowList extends React.Component {
   }
 
   render() {
-    if (this.state.loading || this.props.list.name === null) {
+    if (this.state.loading || !this.props.list )  {
       return <div></div>
     }
     let pathArray = this.props.location.pathname.split("/")
     let listId = parseInt(pathArray[pathArray.length - 1])
     return (
-      <div className="">
-        <div className="">
-          {this.props.list.name}
-          <button className="review-but" onClick={this.handleDelete}>Delete</button>
-          <button className="review-but" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>
-        </div>
-        <div className="task-box">
-          {this.props.tasks.map((task, idx) => {
-            return <TaskIndexItem task={task} key={idx} />
-          })}
-        </div>
-        <div>
-          <button className="review-but" onClick={() => this.props.openModal("create-task")}>Add New Task</button>
+      <div className="main-container">
+        <div className="sub-container">
+          <div className="title-container">
+            <div className="show-title">{this.props.list.name}</div>
+            <button className="edit-delete-button" onClick={this.handleDelete}>Delete</button>
+            <button className="edit-delete-button" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>
+          </div>
+          <div className="button-container">
+            <button className="add-button" onClick={() => this.props.openModal("create-task")}>Add New Task</button>
+          </div>
+          <div className="task-container">
+            {this.props.tasks.map((task, idx) => {
+              return <TaskIndexItem task={task} key={idx} />
+            })}
+          </div>
         </div>
       </div>
-
     )
   }
 

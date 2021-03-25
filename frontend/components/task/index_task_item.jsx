@@ -5,8 +5,8 @@ const TaskIndexItem = ({ task }) => {
 
   return (
     <div>
-      <Link to={`/tasks/${task.id}`} className="">
-          <div className="name-holder">{task.title}</div>
+      <Link to={`/tasks/${task.id}`} className="task-link">
+          <div className="task-item">{task.title}</div>
       </Link>
     </div>
 
