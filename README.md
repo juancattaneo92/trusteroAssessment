@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%201.58.54%20PM.png" width="600">
+<img src="https://github.com/juancattaneo92/trusteroAssessment/blob/main/app/assets/images/Screen%20Shot%202021-03-25%20at%206.47.58%20PM.png" width="600">
 <br>
 <h4 align="center">Welcome to Trustero To-Do List, where you can create, edit and delete lists, tasks and comments. Inside every List, you can create tasks and at every taks you can create comments </h4>
 
@@ -42,7 +42,6 @@
 
 ## Future Key Features
 
-   - Finish the tasks' done and in progress button, I ran out of time to finish it .
    - Allow users to create each list and task with its own color, addind color pallete API.
    - Allow users to search for specific list or task, creating a seach bar and developed it in the backend
 
