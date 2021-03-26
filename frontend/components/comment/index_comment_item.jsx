@@ -15,8 +15,8 @@ const ListIndexItem = ({ comment, openModal, deleteComment}) => {
         </div>
       </div>
       <div className="button-container2">
-        <button className="edit-delete-button" onClick={() => openModal({ "modal-type": "edit-comment", "comment": comment.id })}>Edit</button>
-        <button className="edit-delete-button" onClick={handleDelete}>Delete</button>
+        <button className="edit-delete-button" onClick={() => openModal({ "modal-type": "edit-comment", "comment": comment.id })}><i className="far fa-edit"></i></button>
+        <button className="edit-delete-button" onClick={handleDelete}><i className="far fa-trash-alt"></i></button>
       </div>
     </div>
 

@@ -31,7 +31,7 @@ class CreateComment extends React.Component {
         <div onClick={this.props.closeModal} className='close-x' id="">×</div>
 
         <form className="list-form" onSubmit={this.handleSubmit}>
-          <div className="list-title">Create Comment</div>
+          <div className="list-title"><i className="far fa-comment-dots"></i> Create Comment </div>
 
           <div className="list-body">
             <textarea

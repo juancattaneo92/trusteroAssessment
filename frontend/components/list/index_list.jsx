@@ -24,7 +24,7 @@ class IndexList extends React.Component {
       <div className="main-container">
         <div className="sub-container">
             <div className="button-container">
-              <button className="add-button" onClick={() => this.props.openModal("create-list")}>Add New List</button>
+            <button className="add-button" onClick={() => this.props.openModal("create-list")}><i className="fas fa-plus-circle"></i> List</button>
             </div>
             <div className="list-container">
               

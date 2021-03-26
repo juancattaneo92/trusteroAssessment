@@ -28,7 +28,7 @@ class CreateList extends React.Component {
         <div onClick={this.props.closeModal} className='close-x' id="">×</div>
 
         <form className="list-form" onSubmit={this.handleSubmit}>
-          <div className="list-title">Create List</div>
+          <div className="list-title"><i className="far fa-list-alt"></i> Create List </div>
           <div className="list-body">
             <textarea
               type="text"

@@ -38,11 +38,11 @@ class ShowList extends React.Component {
         <div className="sub-container">
           <div className="title-container">
             <div className="show-title">{this.props.currentList.name}</div>
-            <button className="edit-delete-button" onClick={this.handleDelete}>Delete</button>
-            <button className="edit-delete-button" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}>Edit</button>
+            <button className="edit-delete-button" onClick={() => this.props.openModal({ "modal-type": "edit-list", "list": listId, })}><i className="far fa-edit"></i></button>
+            <button className="edit-delete-button" onClick={this.handleDelete}><i className="far fa-trash-alt"></i></button>
           </div>
           <div className="button-container">
-            <button className="add-button" onClick={() => this.props.openModal("create-task")}>Add New Task</button>
+            <button className="add-button" onClick={() => this.props.openModal("create-task")}><i className="fas fa-plus-circle"></i> Task</button>
           </div>
           <div className="task-container">
             {this.props.tasks.map((task, idx) => {

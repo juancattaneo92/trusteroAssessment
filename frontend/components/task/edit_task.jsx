@@ -36,7 +36,7 @@ class EditTask extends React.Component {
         <div onClick={this.props.closeModal} className='close-x' id="">×</div>
 
         <form className="list-form" onSubmit={this.handleSubmit}>
-          <div className="list-title">Edit Task</div>
+          <div className="list-title"><i className="fas fa-tasks"></i> Edit Task </div>
           <div className="list-body">
             <div className="list-title2">
               <textarea

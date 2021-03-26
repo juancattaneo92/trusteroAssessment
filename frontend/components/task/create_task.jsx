@@ -33,7 +33,7 @@ class CreateTask extends React.Component {
         <div onClick={this.props.closeModal} className='close-x' id="">×</div>
 
         <form className="list-form" onSubmit={this.handleSubmit}>
-          <div className="list-title">Create Task</div>
+          <div className="list-title"><i className="fas fa-tasks"></i> Create Task </div>
 
           <div className="list-body">
             <div className="list-title2">

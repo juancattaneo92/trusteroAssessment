@@ -45,8 +45,8 @@ class ShowTask extends React.Component {
           <div className="inner-container">
             <div className="title-container">
               <div className="show-title">{this.props.task.title}</div>
-              <button className="edit-delete-button" onClick={this.handleDelete}>Delete</button>
-              <button className="edit-delete-button" onClick={() => this.props.openModal({ "modal-type": "edit-task", "task": taskId, })}>Edit</button>
+              <button className="edit-delete-button" onClick={() => this.props.openModal({ "modal-type": "edit-task", "task": taskId, })}><i className="far fa-edit"></i></button>
+              <button className="edit-delete-button" onClick={this.handleDelete}><i className="far fa-trash-alt"></i></button>
             </div>
             <div className="description-container">
               <div className="inner-text">
@@ -62,7 +62,7 @@ class ShowTask extends React.Component {
             </div>
             {/* <div>{this.props.task.status}</div> */}
             <div>
-              <button className="add-button" onClick={() => this.props.openModal("create-comment")}>Add Comment</button>
+              <button className="add-button-comment" onClick={() => this.props.openModal("create-comment")}><i className="fas fa-plus-circle"></i> Comment</button>
             </div>
           </div>
           <div className="inner-container2">

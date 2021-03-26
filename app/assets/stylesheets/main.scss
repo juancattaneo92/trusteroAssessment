@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-:root{
-    --main-red: #8A0303;
-    --main-black: black;
+// :root{
+//     --main-red: #8A0303;
+//     --main-black: black;
 
-}
+// }
 *{
     // box-sizing: border-box;
     font-family: "Jost";
@@ -16,13 +16,17 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  // background: #b4bdae;
 
 }
 .sub-container{
   display: flex;
   flex-direction: column;
   width: 40em;
-  background-color: #b4bdae;
+  border-left: 0.1em dotted #503bff;
+  border-right: 0.1em dotted #503bff;
+
+  // background-color: #b4bdae;
 }
 
 .button-container{
@@ -30,25 +34,47 @@
   justify-content: center;
 }
 .add-button{
-    background-color: #2b2929;
-    height: 2em;
-    width: 10em;
+    background-color: #2b2929bf;
+    width: 5em;
     color: white;
-    font-size: 1.2rem;
     font-weight: 300;
     margin: 0.5em;
     align-items: center;
     font-family: "Jost";
+    border-radius: 10em;
+    font-size: 2em;
 }
+.add-button:hover{
+  cursor: pointer;
+}
+
+.add-button-comment{
+    background-color: #2b2929bf;
+    width: 7em;
+    color: white;
+    font-weight: 300;
+    margin: 0.5em;
+    align-items: center;
+    font-family: "Jost";
+    border-radius: 10em;
+    font-size: 2em;
+    height: 2em;
+}
+.add-button-comment:hover{
+  cursor: pointer;
+}
+
 .list-container{
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .task-container{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40em;
+    align-self: center;
 }
 .list-link{
   text-decoration: none;
@@ -59,22 +85,26 @@
 }
 
 .edit-delete-button{
-    background-color: #2b2929;
+    background-color: #2b2929bf;
+    width: 2.1em;
     height: 2em;
-    width: 5em;
+    font-size: 2em;
     color: white;
-    font-size: 1.2rem;
-    font-weight: 300;
-    margin-right: 0.5em;
     align-items: center;
     font-family: "Jost";
+    border-radius: 10em;
+    margin-left: 0.2em;
 }
 
-@media only screen and (min-width: 768px) { 
+.edit-delete-button:hover{
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 480px) { 
   .add-button{
-    height: 2.3em;
-    width: 10em;
-    font-size: 2.5rem;
+    height: 2em;
+    width: 5em;
+    font-size: 2em;
   }
   .sub-container{
     width: 50em;
@@ -93,26 +123,12 @@
 
 }
 
-.list-item{
-  font-family: 'Montserrat';
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
-  height: 6em;
-  width: 6em;
-  margin: .7em;
-  background-color: whitesmoke;
-  color: black;
-
-}
-
 .show-title{
   font-family: 'Montserrat';
   display: flex;
   justify-content: center;
-  font-size: 3rem;
-  color: whitesmoke;
+  font-size: 5em;
+  color: black;
   margin-right: 0.5em;
 }
 
@@ -122,20 +138,29 @@
   justify-content: center;
   align-items: center;
   margin-top: 1em;
+  overflow-wrap: anywhere;
 }
 
 .task-item{
-  font-family: 'Montserrat';
-  font-size: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: black;
-  background-color: whitesmoke;
-  width: 100%;
-  height: 3em;
-  margin-bottom: 1px;
-  border: 1px solid #486946;
+    font-family: 'Montserrat';
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: whitesmoke;
+    height: 2.1em;
+    margin-bottom: 0.5em;
+    // border: 1px solid #486946;
+    border-radius: 0.5em;
+    box-shadow: 0px 0px 15px background;
+    transition: 1s box-shadow;
+    overflow-wrap: anywhere;
+}
+
+.task-item:hover{
+   background: linear-gradient(130deg, #503bff 0%, #8293ff 100%);
+   color: whitesmoke;
 }
 
 .inner-container{
@@ -149,7 +174,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: end;
-  margin: 0em 3.5em 3.5em 3.5em;
+  margin: 0em 3.5em 3.5em 5.5em;
 }
 .description-container{
   width: 20em;
@@ -158,6 +183,9 @@
   color: black;
   background-color: whitesmoke;
   font-size: 2rem;
+  border-radius: 1em;
+  box-shadow: 0px 0px 15px background;
+  overflow-wrap: anywhere;
 }
 .inner-text{
   display: flex;
@@ -178,11 +206,14 @@
 }
 .comment-item{
   width: 23em;
-  height: 7em;
+  height: 5em;
   margin-bottom: 0.8em;
   color: black;
   background-color: whitesmoke;
-  font-size: 1.5rem;  
+  font-size: 1.5em; 
+  border-radius: 0.5em; 
+  box-shadow: 0px 0px 15px background;
+  overflow-wrap: anywhere;
 }
 .button-container2{
   display: flex;
@@ -201,10 +232,12 @@
     margin: 0.3em;
     align-items: center;
     font-family: "Jost";
+    border-radius: 0.5em;
+    outline: none;
 }
 
 .Done{
-    background-color: #486946;
+    background-color: #503bff;
     height: 2em;
     width: 5em;
     color: white;
@@ -213,7 +246,133 @@
     margin: 0.3em;
     align-items: center;
     font-family: "Jost";
+    border-radius: 0.5em;
+    outline: none;
 }
 .status-container{
   font-size: 2em;
 }
+
+
+.list-item{
+    font-family: 'Montserrat';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 2em;
+    height: 6em;
+    width: 6em;
+    margin: .7em;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 1em;
+    box-shadow: 0px 0px 15px background;
+    transition: 1s box-shadow;
+    overflow-wrap: anywhere;
+  // animation: 1s clockwise infinite;
+}
+
+.list-item:hover{
+   background: linear-gradient(130deg, #503bff 0%, #8293ff 100%);
+   color: whitesmoke;
+}
+
+// .list-item:hover {
+//   box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+// }
+
+// .list-item:hover::before, .list-item:hover::after {
+//   display: block;
+//   content: '';
+//   position: absolute;
+//   width: 5.5em;
+//   height: 5.5em;
+//   background: #32490e;
+//   border-radius: 10em;
+//   z-index: -1;
+//   animation: 1.2s clockwise infinite;
+// }
+
+// .list-item:hover:after {
+//   background: #333129;
+//   animation: 1.2s counterclockwise infinite;
+// }
+
+// @keyframes clockwise {
+//   0% {
+//     top: -0.3em;
+//     left: 0;
+//   }
+//   12% {
+//     top: -0.3em;
+//     left: 0.3em;
+//   }
+//   25% {
+//     top: 0;
+//     left: 0.3em;    
+//   }
+//   37% {
+//     top: 0.3em;
+//     left: 0.3em;
+//   }
+//   50% {
+//     top: 0.3em;
+//     left: 0;    
+//   }
+//   62% {
+//     top: 0.3em;
+//     left: -0.3em;
+//   }
+//   75% {
+//     top: 0;
+//     left: -0.3em;
+//   }
+//   87% {
+//     top: -0.3em;
+//     left: -0.3em;
+//   }
+//   100% {
+//     top: -0.3em;
+//     left: 0;    
+//   }
+// }
+
+// @keyframes counterclockwise {
+//   0% {
+//     top: -0.3em;
+//     right: 0;
+//   }
+//   12% {
+//     top: -0.3em;
+//     right: 0.3em;
+//   }
+//   25% {
+//     top: 0;
+//     right: 0.3em;    
+//   }
+//   37% {
+//     top: 0.3em;
+//     right: 0.3em;
+//   }
+//   50% {
+//     top: 0.3em;
+//     right: 0;    
+//   }
+//   62% {
+//     top: 0.3em;
+//     right: -0.3em;
+//   }
+//   75% {
+//     top: 0;
+//     right: -0.3em;
+//   }
+//   87% {
+//     top: -0.3em;
+//     right: -0.3em;
+//   }
+//   100% {
+//     top: -0.3em;
+//     right: 0;    
+//   }
+// }
