@@ -222,22 +222,22 @@
   margin: 0em 1em 0em 1em;
 }
 
-.Progress{
+.In-Progress{
     background-color: whitesmoke;
     height: 2em;
-    width: 5em;
+    width: 6em;
     color: black;
     font-size: 1em;
     font-weight: 300;
     margin: 0.3em;
     align-items: center;
     font-family: "Jost";
-    border-radius: 0.5em;
+    border-radius: 0.8em;
     outline: none;
 }
 
 .Done{
-    background-color: #503bff;
+    background: linear-gradient(130deg, #503bff 0%, #8293ff 100%);
     height: 2em;
     width: 5em;
     color: white;
@@ -246,7 +246,7 @@
     margin: 0.3em;
     align-items: center;
     font-family: "Jost";
-    border-radius: 0.5em;
+    border-radius: 0.8em;
     outline: none;
 }
 .status-container{

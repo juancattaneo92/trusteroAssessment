@@ -55,9 +55,9 @@ class ShowTask extends React.Component {
             </div>
             <div className="status-container">Status:
               <button
-                className={this.state.status ? "Done" : "Progress"}
+                className={this.state.status ? "Done" : "In-Progress"}
                 onClick={this.toggleStatus}>
-                  {this.state.status ? "Done" : "Progress"}
+                  {this.state.status ? "Done" : "In Progress"}
               </button>
             </div>
             {/* <div>{this.props.task.status}</div> */}
