@@ -43,8 +43,10 @@
 .close-x:hover,
 .close-x:focus {
     cursor: pointer;
-    background-color: #c3bdbd;
-
+    color: whitesmoke;
+    background: linear-gradient(130deg, #503bff 0%, #8293ff 100%);
+    border-radius: 10em;
+    width: 1em;
 }
 
 .list-form{
@@ -101,6 +103,7 @@ textarea::placeholder {
 
 .submit-button:hover{
     cursor: pointer;
+    background: linear-gradient(130deg, #503bff 0%, #8293ff 100%);
 }
 
 
