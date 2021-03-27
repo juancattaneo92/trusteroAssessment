@@ -6,7 +6,6 @@ import { withRouter } from 'react-router-dom'
 
 
 const mSTP = (state, ownProps) => {
-  // debugger
   let locationArr = ownProps.location.pathname.split("/")
   let taskId = locationArr[locationArr.length - 1]
   return ({

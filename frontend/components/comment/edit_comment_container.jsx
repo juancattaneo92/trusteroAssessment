@@ -5,7 +5,6 @@ import { closeModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
-  // debugger
   let commentId = ownProps.comment;
   return {
     comments: Object.values(state.entities.comments),

@@ -13,7 +13,6 @@ class IndexComment extends React.Component {
 
   componentDidUpdate(prevState) {
     if (this.props.comments.length !== prevState.comments.length) {
-      // debugger
       this.props.fetchCommentsByTaskId(this.props.taskId);
     }
   }
@@ -21,7 +20,7 @@ class IndexComment extends React.Component {
   render() {
 
     return (
-        <div className="" >
+        <div>
           {this.props.comments.map((comment, idx) => {
             return <IndexCommentItem comment={comment} key={idx} openModal={this.props.openModal} deleteComment={this.props.deleteComment} /> 
           })

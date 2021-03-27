@@ -12,7 +12,6 @@ class EditComment extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // debugger
     this.props.updateComment(this.state)
       .then(() => this.props.closeModal())
   }
@@ -22,7 +21,6 @@ class EditComment extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     this.props.fetchComment(this.props.comment.id)
   }
 

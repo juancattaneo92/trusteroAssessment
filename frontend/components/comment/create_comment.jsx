@@ -12,7 +12,6 @@ class CreateComment extends React.Component {
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
     let comment = Object.assign({}, this.state)
     comment.task_id = this.props.taskId
@@ -32,7 +31,6 @@ class CreateComment extends React.Component {
 
         <form className="list-form" onSubmit={this.handleSubmit}>
           <div className="list-title"><i className="far fa-comment-dots"></i> Create Comment </div>
-
           <div className="list-body">
             <textarea
               type="text"
@@ -40,7 +38,6 @@ class CreateComment extends React.Component {
               value={this.state.body}
               onChange={this.handleInput("body")} />
           </div>
-
           <div>
             <button className="submit-button">Submit</button>
           </div>
