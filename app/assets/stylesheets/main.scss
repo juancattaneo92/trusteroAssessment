@@ -2,13 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// :root{
-//     --main-red: #8A0303;
-//     --main-black: black;
 
-// }
 *{
-    // box-sizing: border-box;
     font-family: "Jost";
 }
 
@@ -16,8 +11,6 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  // background: #b4bdae;
-
 }
 .sub-container{
   display: flex;
@@ -25,8 +18,6 @@
   width: 40em;
   border-left: 0.1em dotted #503bff;
   border-right: 0.1em dotted #503bff;
-
-  // background-color: #b4bdae;
 }
 
 .button-container{
@@ -270,109 +261,9 @@
     box-shadow: 0px 0px 15px background;
     transition: 1s box-shadow;
     overflow-wrap: anywhere;
-  // animation: 1s clockwise infinite;
 }
 
 .list-item:hover{
    background: linear-gradient(130deg, #503bff 0%, #8293ff 100%);
    color: whitesmoke;
 }
-
-// .list-item:hover {
-//   box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
-// }
-
-// .list-item:hover::before, .list-item:hover::after {
-//   display: block;
-//   content: '';
-//   position: absolute;
-//   width: 5.5em;
-//   height: 5.5em;
-//   background: #32490e;
-//   border-radius: 10em;
-//   z-index: -1;
-//   animation: 1.2s clockwise infinite;
-// }
-
-// .list-item:hover:after {
-//   background: #333129;
-//   animation: 1.2s counterclockwise infinite;
-// }
-
-// @keyframes clockwise {
-//   0% {
-//     top: -0.3em;
-//     left: 0;
-//   }
-//   12% {
-//     top: -0.3em;
-//     left: 0.3em;
-//   }
-//   25% {
-//     top: 0;
-//     left: 0.3em;    
-//   }
-//   37% {
-//     top: 0.3em;
-//     left: 0.3em;
-//   }
-//   50% {
-//     top: 0.3em;
-//     left: 0;    
-//   }
-//   62% {
-//     top: 0.3em;
-//     left: -0.3em;
-//   }
-//   75% {
-//     top: 0;
-//     left: -0.3em;
-//   }
-//   87% {
-//     top: -0.3em;
-//     left: -0.3em;
-//   }
-//   100% {
-//     top: -0.3em;
-//     left: 0;    
-//   }
-// }
-
-// @keyframes counterclockwise {
-//   0% {
-//     top: -0.3em;
-//     right: 0;
-//   }
-//   12% {
-//     top: -0.3em;
-//     right: 0.3em;
-//   }
-//   25% {
-//     top: 0;
-//     right: 0.3em;    
-//   }
-//   37% {
-//     top: 0.3em;
-//     right: 0.3em;
-//   }
-//   50% {
-//     top: 0.3em;
-//     right: 0;    
-//   }
-//   62% {
-//     top: 0.3em;
-//     right: -0.3em;
-//   }
-//   75% {
-//     top: 0;
-//     right: -0.3em;
-//   }
-//   87% {
-//     top: -0.3em;
-//     right: -0.3em;
-//   }
-//   100% {
-//     top: -0.3em;
-//     right: 0;    
-//   }
-// }
