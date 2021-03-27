@@ -11,8 +11,6 @@ class ShowList extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
-    // this.props.fetchList(this.props.currentList.id)
     this.props.fetchList(this.props.match.params.listId)
     this.props.fetchTasksByListId(this.props.match.params.listId)
       .then(() => this.setState({ loading: false }))
@@ -53,20 +51,6 @@ class ShowList extends React.Component {
       </div>
     )
   }
-
 }
 
 export default ShowList;
-
-
-// componentDidMount() {
-//   // debugger
-//   this.props.fetchList(this.props.match.params.listId);
-//   this.props.fetchTasks();
-// }
-
-// componentDidUpdate(prevProps){
-//   if (this.props.match.params.listId !== prevProps.match.params.listId) {
-
-//   }
-// }

@@ -5,7 +5,6 @@ import { closeModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
-  // debugger
   return {
     lists: Object.values(state.entities.lists),
     list: state.entities.lists[state.ui.modal.list]

@@ -6,9 +6,7 @@ class CreateList extends React.Component {
     this.state = {
       name: "",
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleInput = this.handleInput.bind(this);
   }
 
   handleSubmit(e) {
@@ -26,7 +24,6 @@ class CreateList extends React.Component {
     return (
       <div className="modal-container">
         <div onClick={this.props.closeModal} className='close-x' id="">×</div>
-
         <form className="list-form" onSubmit={this.handleSubmit}>
           <div className="list-title"><i className="far fa-list-alt"></i> Create List </div>
           <div className="list-body">
@@ -36,7 +33,6 @@ class CreateList extends React.Component {
               value={this.state.name}
               onChange={this.handleInput("name")} />
           </div>
-
           <div >
             <button className="submit-button" >Submit</button>
           </div>
