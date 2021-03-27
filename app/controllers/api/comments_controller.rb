@@ -16,7 +16,6 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    # debugger
     if @comment.save
       render :show
     else
@@ -26,7 +25,6 @@ class Api::CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-    # debugger
     if @comment.update(comment_params)
       render :show
     else

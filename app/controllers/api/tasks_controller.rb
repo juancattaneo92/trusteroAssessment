@@ -16,7 +16,6 @@ class Api::TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
-    # debugger
     if @task.save
       render :show
     else
@@ -29,7 +28,6 @@ class Api::TasksController < ApplicationController
     @task = Task.find_by(id: params[:id])
 
     if @task.update(task_params)
-      # debugger
       render :show
     else
       flash.now[:errors] = @task.errors.full_messages

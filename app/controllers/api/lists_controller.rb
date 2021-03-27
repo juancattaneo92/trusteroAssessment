@@ -5,16 +5,13 @@ class Api::ListsController < ApplicationController
   end
 
   def show
-    # debugger
     @list = List.find(params[:id])
   end
 
   def create
-    # debugger
     @list = List.create(list_params)
     if @list.save
       redirect_to "/api/lists"
-      # render :index
     else
       flash.now[:errors] = @list.errors.full_messages
     end
@@ -23,10 +20,7 @@ class Api::ListsController < ApplicationController
   def update
 
     @list = List.find_by(id: params[:id])
-    # debugger
     if @list.update(list_params)
-      # redirect_to "/api/lists"
-      # debugger
       render :show
     else
       flash.now[:errors] = @list.errors.full_messages
