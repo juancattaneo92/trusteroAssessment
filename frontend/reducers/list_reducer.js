@@ -7,7 +7,6 @@ const listsReducer = (state = {}, action) => {
     case RECEIVE_LISTS:
       return action.lists
     case RECEIVE_LIST:
-      // return Object.assign(newState, action.list)
       newState[action.list.id] = action.list
       return newState
     case REMOVE_LIST:
