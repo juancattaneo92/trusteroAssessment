@@ -7,14 +7,12 @@ class EditTask extends React.Component {
       title: this.props.task.title,
       description: this.props.task.description,
       id: this.props.task.id
-      // status: this.props.task.status
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    // let task = Object.assign({}, this.state)
     this.props.updateTask(this.state)
       .then(() => this.props.closeModal())
   }
@@ -50,10 +48,6 @@ class EditTask extends React.Component {
               placeholder="description"
               value={this.state.description}
               onChange={this.handleInput("description")} />
-            {/* <input
-              type="radio"
-              name="status"
-              value */}
           </div>
           <div >
             <button className="submit-button">Edit</button>

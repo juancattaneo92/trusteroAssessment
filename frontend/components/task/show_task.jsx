@@ -19,7 +19,6 @@ class ShowTask extends React.Component {
     .then( () => this.setState( {loading: false} ))
   }
   toggleStatus() {
-    // debugger
     const currentState = this.state.status;
     this.setState({ status: !currentState});
   }
@@ -60,7 +59,6 @@ class ShowTask extends React.Component {
                   {this.state.status ? "Done" : "In Progress"}
               </button>
             </div>
-            {/* <div>{this.props.task.status}</div> */}
             <div>
               <button className="add-button-comment" onClick={() => this.props.openModal("create-comment")}><i className="fas fa-plus-circle"></i> Comment</button>
             </div>

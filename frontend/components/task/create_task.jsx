@@ -6,15 +6,12 @@ class CreateTask extends React.Component {
     this.state = {
       title: "",
       description: "",
-      // status: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-
   }
 
   handleSubmit(e) {
-    // debugger
     e.preventDefault();
     let task = Object.assign({}, this.state)
     task.list_id = this.props.listId
@@ -34,7 +31,6 @@ class CreateTask extends React.Component {
 
         <form className="list-form" onSubmit={this.handleSubmit}>
           <div className="list-title"><i className="fas fa-tasks"></i> Create Task </div>
-
           <div className="list-body">
             <div className="list-title2">
               <textarea
@@ -48,17 +44,12 @@ class CreateTask extends React.Component {
               placeholder="description"
               value={this.state.description}
               onChange={this.handleInput("description")} />
-            {/* <input
-              type="radio"
-              name="status"
-              value */}
           </div>
 
           <div >
             <button className="submit-button">Submit</button>
           </div>
         </form>
-
       </div>
     )
   }
